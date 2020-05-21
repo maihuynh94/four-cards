@@ -1,0 +1,30 @@
+html, body {
+  width: 100%;
+  height: 100vh;
+  font-family: "Poppins", sans-serif;
+  font-size: 15px;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #fafafa;
+}
+html .title, body .title {
+  text-align: center;
+  width: 40%;
+  margin: 0 auto;
+}
+html .card__container, body .card__container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  width: 80%;
+  margin: 0 auto;
+}
+html footer, body footer {
+  text-align: center;
+}
+
+/*# sourceMappingURL=main.css.map */
