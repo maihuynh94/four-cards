@@ -8,38 +8,210 @@ $blue: hsl(212, 86%, 64%);
 $darkBlue: hsl(234, 12%, 34%);
 $blue: hsl(229, 6%, 66%);
 $lightGray: hsl(0, 0%, 98%);
+$lightGray-0: hsl(236, 15%, 81%);
+$black: #333;
+
+//breakpoints
+$extraSmall: 320px;
+$small: 576px;
+$medium: 768px;
+$large: 992px;
+
+//mixin breakpoints
+@mixin extraSmall {
+  @media (min-width: $extraSmall) {
+    @content;
+  }
+}
+@mixin small {
+  @media (min-width: $small) {
+    @content;
+  }
+}
+@mixin medium {
+  @media (min-width: $medium) {
+    @content;
+  }
+}
+@mixin large {
+  @media (min-width: $large) {
+    @content;
+  }
+}
+
+//mixin text
+@mixin text($fontSize, $fontWeight, $color) {
+  font-size: $fontSize;
+  font-weight: $fontWeight;
+  color: $color;
+}
+//mixin card
+@mixin styleCard($borderColor, $borderRadius, $bgColor, $position, $boxshadowColor, $py, $px){
+    border-top: 4px solid $borderColor;
+    border-radius: $borderRadius;
+    -webkit-border-radius: $borderRadius;
+    -moz-border-radius: $borderRadius;
+    -ms-border-radius: $borderRadius;
+    -o-border-radius: $borderRadius;
+    background-color: $bgColor;
+    position: $position;
+    box-shadow: 0 0 15px $boxshadowColor;
+    padding: $py $px;
+}
+
+//mixin img
+@mixin styleImg($position, $right, $bottom) {
+    position: $position;
+    right: $right;
+    bottom: $bottom;
+}
 
 
 //global
-html,body{
-    width: 100%;
-    height: 100vh;
-    font-family: 'Poppins', sans-serif;
-    font-size: 15px;
-    margin:0;
-    padding: 0;
-    box-sizing: border-box;
-    overflow: hidden;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: $lightGray;
-    // title
-    .title{
-        text-align: center;
-        width: 40%;
-        margin: 0 auto;
-    }
-    //card
-    .card__container{
-        display: grid;
-        grid-template-columns: 1fr 1fr 1fr 1fr;
-        width: 80%;
-        margin: 0 auto;
-    }
-    //footer
-    footer{
-        text-align: center;
-    }
+body {
+  width: 100%;
+  height: 100%;
+  font-family: "Poppins", sans-serif;
+  font-size: 15px;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background-color: $lightGray;
 
+  h1,
+  h2,
+  p {
+    margin-block-start: 0;
+    margin-block-end: 0;
+  }
+
+  .title {
+    text-align: center;
+    width: 35%;
+    margin: 0 auto;
+    padding-top: 50px;
+    h1 {
+      @include text(1.7rem, 300, $black);
+    }
+    h2 {
+      @include text(1.7rem, bold, $black);
+    }
+    p {
+      @include text(0.8rem, normal, $blue);
+      margin-top: 0.8rem;
+    }
+  }
+  //card
+  .card__container {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    width: 80%;
+    margin: 0 auto;
+    grid-gap: 30px;
+    padding: 40px 0;
+
+    .card1 {
+      height: 180px;
+      grid-column: 1 / span 4;
+      grid-row: 4 / span 6;
+      @include styleCard($cyan, 10px, $lightGray, relative,$lightGray-0, 25px, 30px);
+      h1 {
+        @include text(1.2rem, bold, $black);
+      }
+      p {
+        @include text(0.8rem, 400, $blue);
+        line-height: 1.5rem;
+        margin-top: 0.5rem;
+      }
+      img {
+        @include styleImg(absolute,25px, 30px);
+      }
+      @include extraSmall {
+        grid-column: 1 / span 12;
+        grid-row: 1 / span 3;
+      }
+      @include small {
+        grid-column: 1 / span 12;
+        grid-row: 1 / span 3;
+      }
+      @include medium{
+          grid-column: 1/ span 6;
+          grid-row: 1/span 6;
+      }
+      @include large {
+        grid-column: 1 / span 4;
+        grid-row: 4 / span 6;
+      }
+    }
+    .card2 {
+        height: 180px;
+      grid-column: 5 / span 4;
+      grid-row: 1 / span 6;
+      @include styleCard($cyan, 10px, $lightGray, relative,$lightGray-0, 25px, 30px);
+      @include extraSmall {
+        grid-column: 1 / span 12;
+        grid-row: 4 / span 3;
+      }
+      @include small {
+        grid-column: 1 / span 12;
+        grid-row: 4 / span 3;
+      }
+      @include medium{
+        grid-column: 7/ span 6;
+        grid-row: 1/span 6;
+    }
+      @include large {
+        grid-column: 5 / span 4;
+        grid-row: 1 / span 6;
+      }
+    }
+    .card3 {
+        height: 180px;
+      grid-column: 5 / span 4;
+      grid-row: 7 / span 6;
+      @include styleCard($cyan, 10px, $lightGray, relative,$lightGray-0, 25px, 30px);
+      @include extraSmall {
+        grid-column: 1 / span 12;
+        grid-row: 7 / span 3;
+      }
+      @include small {
+        grid-column: 1 / span 12;
+        grid-row: 7 / span 3;
+      }
+      @include medium{
+        grid-column: 1/ span 6;
+        grid-row: 7/span 6;
+    }
+      @include large {
+        grid-column: 5 / span 4;
+        grid-row: 7 / span 6;
+      }
+    }
+    .card4 {
+        height: 180px;
+      grid-row: 4 / span 6;
+      grid-column: 9 / span 4;
+      @include styleCard($cyan, 10px, $lightGray, relative,$lightGray-0, 25px, 30px);
+      @include extraSmall {
+        grid-column: 1 / span 12;
+        grid-row: 10 / span 3;
+      }
+      @include small {
+        grid-column: 1 / span 12;
+        grid-row: 10 / span 3;
+      }
+      @include medium{
+        grid-column: 7/ span 6;
+        grid-row: 7/span 6;
+    }
+      @include large {
+        grid-row: 4 / span 6;
+        grid-column: 9 / span 4;
+      }
+    }
+  }
+  //footer
+  footer {
+    text-align: center;
+  }
 }
