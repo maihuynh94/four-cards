@@ -1,0 +1,57 @@
+//mixin breakpoints
+@mixin extraSmall {
+    @media (min-width: $extraSmall) {
+      @content;
+    }
+  }
+  @mixin small {
+    @media (min-width: $small) {
+      @content;
+    }
+  }
+  @mixin medium {
+    @media (min-width: $medium) {
+      @content;
+    }
+  }
+  @mixin large {
+    @media (min-width: $large) {
+      @content;
+    }
+  }
+  
+  //mixin text
+  @mixin text($fontSize, $fontWeight, $color) {
+    font-size: $fontSize;
+    font-weight: $fontWeight;
+    color: $color;
+  }
+  //mixin card
+  @mixin styleCard(
+    $borderColor,
+    $borderRadius,
+    $bgColor,
+    $position,
+    $boxshadowColor,
+    $py,
+    $px
+  ) {
+    border-top: 4px solid $borderColor;
+    border-radius: $borderRadius;
+    -webkit-border-radius: $borderRadius;
+    -moz-border-radius: $borderRadius;
+    -ms-border-radius: $borderRadius;
+    -o-border-radius: $borderRadius;
+    background-color: $bgColor;
+    position: $position;
+    box-shadow: 0 0 15px $boxshadowColor;
+    padding: $py $px;
+  }
+  
+  //mixin img
+  @mixin styleImg($position, $right, $bottom) {
+    position: $position;
+    right: $right;
+    bottom: $bottom;
+  }
+  

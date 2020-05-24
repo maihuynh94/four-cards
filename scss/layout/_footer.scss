@@ -1,0 +1,17 @@
+//footer
+footer {
+  text-align: center;
+  @include extraSmall {
+    margin: 0 auto;
+    width: 90%;
+    @include text(0.6rem, normal, $black);
+  }
+  @include small {
+    margin: 0 auto;
+    width: 90%;
+    @include text(0.8rem, normal, $black);
+  }
+  @include medium{
+    @include text(1rem, normal, $black);
+  }
+}

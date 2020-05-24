@@ -1,0 +1,57 @@
+.title {
+  text-align: center;
+  margin: 0 auto;
+  padding-top: 50px;
+  @include extraSmall {
+    width: 80%;
+    h1 {
+      @include text(1.3rem, 350, $black);
+    }
+    h2 {
+      @include text(1.3rem, bold, $black);
+      margin-bottom: 1.3rem;
+    }
+    p {
+      @include text(0.8rem, normal, $blue);
+    }
+  }
+  @include small {
+    width: 90%;
+    h1 {
+      @include text(1.7rem, 350, $black);
+    }
+    h2 {
+      @include text(1.7rem, bold, $black);
+    }
+    p {
+      @include text(1.1rem, normal, $blue);
+    }
+  }
+  @include medium {
+    width: 60%;
+    h1 {
+      @include text(1.8rem, 350, $black);
+    }
+    h2 {
+      @include text(1.8rem, bold, $black);
+    }
+    p {
+      @include text(0.9rem, normal, $blue);
+      margin-top: 1rem;
+    }
+  }
+
+  @include large {
+    width: 40%;
+    h1 {
+      @include text(2rem, 350, $black);
+    }
+    h2 {
+      @include text(2rem, bold, $black);
+    }
+    p {
+      @include text(0.9rem, normal, $blue);
+      margin-top: 1rem;
+    }
+  }
+}
