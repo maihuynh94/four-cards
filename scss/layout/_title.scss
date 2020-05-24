@@ -1,7 +1,7 @@
 .title {
   text-align: center;
   margin: 0 auto;
-  padding-top: 50px;
+  padding-top: 5rem;
   @include extraSmall {
     width: 80%;
     h1 {
@@ -44,13 +44,13 @@
   @include large {
     width: 40%;
     h1 {
-      @include text(2rem, 350, $black);
+      @include text(2.2rem, 350, $black);
     }
     h2 {
-      @include text(2rem, bold, $black);
+      @include text(2.2rem, bold, $black);
     }
     p {
-      @include text(0.9rem, normal, $blue);
+      @include text(1rem, normal, $blue);
       margin-top: 1rem;
     }
   }
