@@ -28,7 +28,6 @@
   }
   //mixin card
   @mixin styleCard(
-    $borderColor,
     $borderRadius,
     $bgColor,
     $position,
@@ -36,7 +35,6 @@
     $py,
     $px
   ) {
-    border-top: 4px solid $borderColor;
     border-radius: $borderRadius;
     -webkit-border-radius: $borderRadius;
     -moz-border-radius: $borderRadius;
